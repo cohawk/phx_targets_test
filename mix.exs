@@ -15,6 +15,9 @@ defmodule UmbrellaTargetsTest.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    []
+    IO.inspect(Mix.target(), label: "Umbrella Targets")
+    [
+      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false, targets: :postgres}
+    ]
   end
 end
